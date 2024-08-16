@@ -17,21 +17,20 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     */
  }
  
- function validateInput(formInput) {
-    let inputStr = '';
-    if(formInput == ''){
-        inputStr = "Empty";
+ function validateInput(testInput) {
+   
+    if(testInput === ''){
+        return 'Empty';
     }
-    else if (isNaN(formInput) === true){
-        inputStr = "Not a Number";
+    else if (isNaN(testInput)){
+        return 'Not a Number';
     }
-    else if (typeof formInput === "number"){
-        inputStr = "Is a Number";
+    else if (!isNaN(Number(testInput))){
+        return 'Is a Number';
     }   
 
-    console.log(inputStr);
-    return inputStr;
- };
+};
+
  
  function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let button = document.getElementById("formSubmit");
