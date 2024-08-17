@@ -14,4 +14,12 @@ function validateInput(testInput) {
 
 }
 
-console.log(validateInput(3));
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    window.addEventListener('load', function(){
+     let form = document.querySelector('form');
+     form.addEventListener('submit', function (event){
+         let pilot = document.querySelector('input[name="pilotName"]');
+     
+     })
+    })
+  }
