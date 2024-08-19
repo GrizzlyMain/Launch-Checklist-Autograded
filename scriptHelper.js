@@ -1,7 +1,5 @@
 // Write your helper functions here!
-
 require('cross-fetch/polyfill');
-
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
    let  missionTarget = document.getElementById('missionTarget');
@@ -16,7 +14,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                  </ol>
                  <img src= ${imageUrl}>`;
 
- }
+ };
  
  function validateInput(testInput) {
    
@@ -99,12 +97,11 @@ else if(fuelLevel >= 10000 && cargoLevel <= 10000){
      planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then(function(response){
         return response.json();
      })
-    
-       return planetsReturned;
+     return planetsReturned;  
  };
 
  function pickPlanet(planets) {
-   let randomPlanet = planets[Math.floor(Math.random()*planets.length)];
+   let randomPlanet = planets[Math.floor(Math.random() * planets.length)];
    return randomPlanet;
  };
  
