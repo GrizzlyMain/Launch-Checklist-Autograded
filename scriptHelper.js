@@ -38,12 +38,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    let copilotStatus = document.getElementById('copilotStatus');
    let fuelStatus = document.getElementById('fuelStatus');
    let cargoStatus = document.getElementById('cargoStatus');
-   let faultyItems = document.getElementById('faultyItems');
    let launchStatus = document.getElementById('launchStatus');
 
    if(validateInput(pilot) === 'Empty' || validateInput(pilot) === 'Is a Number' || validateInput(copilot) === 'Empty' || validateInput(copilot) === 'Is a Number'
 || validateInput(fuelLevel) === 'Empty' || validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Empty' || validateInput(cargoLevel) === 'Not a Number' ){
-    faultyItems.style.visibility = 'hidden';
+    list.style.visibility = 'hidden';
     launchStatus.style.color = 'black';
     launchStatus.innerHTML = 'Awaiting Information Before Launch'
     pilotStatus.innerHTML = '';
@@ -54,7 +53,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 else if(fuelLevel < 10000 && cargoLevel > 10000){
-    faultyItems.style.visibility = 'visible';
+    list.style.visibility = 'visible';
     launchStatus.innerHTML = 'Shuttle Not Ready for Launch';
     launchStatus.style.color = 'red';
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
@@ -64,7 +63,7 @@ else if(fuelLevel < 10000 && cargoLevel > 10000){
 }
 
 else if(fuelLevel < 10000 && cargoLevel <= 10000){
-    faultyItems.style.visibility = 'visible';
+    list.style.visibility = 'visible';
     launchStatus.innerHTML = 'Shuttle Not Ready for Launch';
     launchStatus.style.color = 'red';
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
@@ -74,7 +73,7 @@ else if(fuelLevel < 10000 && cargoLevel <= 10000){
 }
 
 else if(fuelLevel >= 10000 && cargoLevel > 10000){
-    faultyItems.style.visibility = 'visible';
+    list.style.visibility = 'visible';
     launchStatus.innerHTML = 'Shuttle Not Ready for Launch';
     launchStatus.style.color = 'red';
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
@@ -84,7 +83,7 @@ else if(fuelLevel >= 10000 && cargoLevel > 10000){
 }
 
 else if(fuelLevel >= 10000 && cargoLevel <= 10000){
-    faultyItems.style.visibility = 'visible';
+    list.style.visibility = 'visible';
     launchStatus.innerHTML = 'Shuttle is Ready for Launch';
     launchStatus.style.color = 'green';
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
